@@ -22,7 +22,7 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.CR_PAT }}
       - name: Build and push
-        uses: docker/build-push-action@2
+        uses: docker/build-push-action@v2
         with:
           context: ./gradle-docker-jdk-17
           push: true
