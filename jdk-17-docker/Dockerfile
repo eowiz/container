@@ -1,12 +1,13 @@
-FROM alpine:latest
+FROM debian:stable-slim
 
-RUN apk --update --no-cache add openjdk17-jre-headless docker bash openrc
+RUN apt-get update && apt-get install -y \
+       openjdk-17-jdk-headless \
+       docker \
+    && apt-get autoremove -y \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-SHELL [ "/bin/bash", "-c" ]
-
-ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk
-
-RUN rc-update add docker boot
+RUN echo export JAVA_HOME=$(readlink -f /usr/bin/javac | sed 's:/bin/javac::') >> ~/.bashrc
 
 WORKDIR /home
 
