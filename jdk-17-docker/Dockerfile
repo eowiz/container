@@ -8,4 +8,4 @@ ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 
 WORKDIR /home
 
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/bin/bash", "-l", "-c"]
