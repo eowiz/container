@@ -28,5 +28,5 @@ jobs:
           push: true
           tags: |
             ghcr.io/${{ github.actor }}/${{ env.IMAGE_NAME }}:latest
-            ghcr.io/${{ github.actor }}/${{ env.IMAGE_NAME }}:1.0.4
+            ghcr.io/${{ github.actor }}/${{ env.IMAGE_NAME }}:1.0.5
           
