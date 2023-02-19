@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk --update --no-cache add openjdk17-jre-headless docker bash
+RUN apk --update --no-cache add openjdk17-jre-headless docker bash openrc
 
 SHELL [ "/bin/bash", "-c" ]
 
