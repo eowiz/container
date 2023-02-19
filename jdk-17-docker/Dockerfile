@@ -7,7 +7,6 @@ SHELL [ "/bin/bash", "-c" ]
 ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 
 RUN rc-update add docker boot
-RUN service docker start
 
 WORKDIR /home
 
